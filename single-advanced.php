@@ -11,10 +11,10 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class=" beginner" role="main">
-        <?php if (current_user_can('read_group_beginner')) : ?>
+    <main id="main" class="advanced" role="main">
+        <?php if (current_user_can('read_group_advanced')) : ?>
             <div class="banner-group">
-                <h1>Grupa: Beginner</h1>
+                <h1>Grupa: Advanced</h1>
                 <?php if (is_user_logged_in()) :
                     echo '<h2 class="member-name"> Hello ' . $current_user->user_login . '!!!</h2>';
                 endif; ?>

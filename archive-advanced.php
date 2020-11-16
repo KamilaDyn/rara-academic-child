@@ -18,41 +18,29 @@ get_header(); ?>
             <div class="banner-group">
                 <h1>Grupa: Advanced</h1>
                 <?php if (is_user_logged_in()) :
-                    echo `<h2 class="member-name"> Hello ' . $current_user->user_login . '!!! </h2>`;
+                    echo '<h2 class="member-name"> Hello ' . $current_user->user_login . '!!! </h2>';
                 endif; ?>
             </div>
-            <div class="container">
-                <?php
-                while (have_posts()) {
-                    the_post(); ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        <header class="entry-header">
-                            <h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
-                            <h3 class="entry-subtitle"></h3>
-                        </header><!-- .entry-header -->
+        <?php
+            get_template_part('template-parts/content-group', get_post_format());
 
-                        <?php
-                        if (has_post_thumbnail()) {
-                        ?>
-                            <a href="<?php the_permalink(); ?>">
-                                <div><?php the_post_thumbnail('rara-academic-welcome') ?></div>
-                            </a> <?php
-                                }
-                                    ?>
-                        <div class="entry-content">
-                            <?php echo wp_trim_words(get_the_content(), 50, '...'); ?>
+        else : ?>
+            <div class="not-logged">
+                <h1>Strefa studenta</h1>
+                <h2>Grupa Advanced</h2>
+                <p> Wygląda na to, że nie jesteś w tej grupie, brak dostępu.
+                    Jeśli jesteś uczestnikiem kursu wybierz swoją grupę:</p>
+                <ul>
+                    <li><a href="<?php echo esc_url(site_url('/student/beginner')); ?>" style="color: #01c6b8;">Beginner</a></li>
+                    <li><a href="<?php echo esc_url(site_url('/student/intermediate')); ?>" style="color: #01c6b8;">Intermediate</a></li>
+                    <li><a href="<?php echo esc_url(site_url('/student/pro')); ?>" style="color: #01c6b8;">Pro</a></li>
+                </ul>
+                </p> Jesli nie jesteś uczestnikiem mojego kursu, a chcesz dobrze nauczyć się się języka angielskiego napisz do mnie.
+                <a href="<?php echo esc_url(site_url('/kontakt')); ?>" class="learn-more">Kontakt</a>
+                </p>
 
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="learn-more">Przejdź do lekcji</a>
-                    </article>
-                    <hr>
-                <?php }
-                echo paginate_links();
-                ?>
             </div>
-        <?php else : ?>
-            <div>Nie mam dostępu do tego panelu. Dla nie zalogowanych opis grupy, opis ten byłby statyczny, </div>
         <?php endif; ?>
     </main>
 </div>

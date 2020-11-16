@@ -171,17 +171,20 @@ banner
     height: 100px;
     background-color: #49596b;
     margin-bottom: 50px;
+    background: linear-gradient(to top, rgba(85, 84, 88, 0.7), rgba(85, 84, 88, 0.9)), url(images/questions.jpg) no-repeat fixed center;
 }
+
+
 
 .banner-group h1 {
     padding-left: 10px;
-    color: #01c6b8;
+    color: #fff;
     padding-top: 10px;
 }
 
 .banner-group h2 {
     text-align: center;
-    color: #fff;
+    color: #01c6b8;
 }
 
 /*========
@@ -367,6 +370,39 @@ login button
 
 .site-main .container .learn-more {
     color: #018c82;
+}
+
+/* ==========
+students panel 
+=======*/
+
+.not-logged .learn-more {
+    color: #01c6b8;
+}
+
+.not-logged h2 {
+    padding-bottom: 30px;
+}
+
+.not-logged .login-btn {
+
+    font-size: 24px;
+    line-height: 30px;
+    float: none;
+    margin-right: 0;
+
+}
+
+.not-logged h1 {
+    text-align: center;
+    color: #01c6b8;
+    text-transform: uppercase;
+    padding-bottom: 50px;
+}
+
+.info {
+    text-align: center;
+    color: red;
 }
 
 /* responsive */

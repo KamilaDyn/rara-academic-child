@@ -1,5 +1,21 @@
 <?php
+// add post-formats to post_type 'page'
+add_theme_support('post-formats', array(
+    'aside',
+    'image',
+    'video',
+    'quote',
+    'link',
+));
+
+add_post_type_support('beginner', 'post-formats');
+add_post_type_support('intermediate', 'post-formats');
+
+add_post_type_support('advanced', 'post-formats');
+add_post_type_support('pro', 'post-formats');
 add_action('wp_enqueue_scripts', 'enqueue_parent_styles');
+
+
 
 function enqueue_parent_styles()
 {
@@ -90,8 +106,20 @@ function redirectSubsToFrontend()
 {
     $ourCurrentUser = wp_get_current_user();
 
-    if ($ourCurrentUser->roles[1] == 'beginner') {
-        wp_redirect(site_url('/beginner'));
+    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'beginner') {
+        wp_redirect(esc_url(site_url('/student/beginner')));
+        exit;
+    }
+    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'intermediate') {
+        wp_redirect(esc_url(site_url('/student/intermediate/')));
+        exit;
+    }
+    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'advanced') {
+        wp_redirect(site_url('/student/advanced'));
+        exit;
+    }
+    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'pro') {
+        wp_redirect(esc_url(site_url('/student/pro')));
         exit;
     }
 }
