@@ -1,0 +1,549 @@
+/*
+Theme Name: Rara Academic Child Theme
+Author: Kamila Dynysiuk
+Description:    A child theme of the Rara Academic theme
+Template: rara-academic 
+Version: 1.1.9
+Requires PHP: 5.6
+Tested up to: 5.4.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rara-academic-child
+
+*/
+
+
+.full-width #primary {
+    width: 90%;
+}
+
+.header-top {
+    padding-top: 10px;
+}
+
+/*========
+banner
+==================*/
+
+.banner {
+    position: relative;
+    background: #000;
+}
+
+.banner .flexslider .slides>li {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    vertical-align: top;
+    opacity: 0.5;
+}
+
+.banner .banner-text {
+    position: absolute;
+    top: 24.5%;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 22px;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.banner .banner-text .text-holder {
+
+    max-width: 454px;
+    float: right;
+    text-align: left;
+    color: #fff;
+
+}
+
+.banner .banner-text .title {
+    margin: 0 0 36px;
+    font-size: 48px;
+    line-height: 56px;
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.banner .banner-text .learn-more {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    float: left;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: #01c6b8;
+    padding: 20px 46px;
+    position: relative;
+    transform: translateZ(0px);
+    display: inline-block;
+}
+
+
+.banner .banner-text .learn-more:before {
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: #01a196;
+    transition-property: transform;
+    -webkit-transition-property: transform;
+    -moz-transition-property: transform;
+    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    content: '';
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    z-index: -1;
+    position: absolute;
+}
+
+.banner .banner-text .learn-more:hover:before {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+}
+
+.banner .banner-text p {
+    margin: 0 0 26px;
+}
+
+/* .banner .banner-slider .owl-nav {
+    display: block;
+} */
+
+.banner .owl-nav .owl-prev {
+    background: url(images/btn-prev.png) no-repeat;
+    width: 55px;
+    height: 55px;
+    text-indent: -9999px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -55px;
+    opacity: 0.5;
+}
+
+.banner .owl-nav .owl-prev:hover {
+    background: url(images/btn-prev.png) no-repeat;
+    opacity: 1;
+}
+
+.banner .owl-nav .owl-next {
+    background: url(images/btn-next.png) no-repeat;
+    width: 55px;
+    height: 55px;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -55px;
+    opacity: 0.5;
+}
+
+.banner .owl-nav .owl-next:hover {
+    background: url(images/btn-next.png) no-repeat;
+    opacity: 1;
+}
+
+.banner .owl-nav .owl-prev:focus,
+.banner .owl-nav .owl-next:focus {
+    outline: thin dotted #fff;
+}
+
+.banner-group {
+    width: 100%;
+    height: 100px;
+    background-color: #49596b;
+    margin-bottom: 50px;
+}
+
+.banner-group h1 {
+    padding-left: 10px;
+    color: #01c6b8;
+    padding-top: 10px;
+}
+
+.banner-group h2 {
+    text-align: center;
+    color: #fff;
+}
+
+/*========
+welcoem
+==================*/
+.welcome-section .watch-link {
+    margin-top: 20px;
+
+}
+
+
+
+
+/*========
+popular courses
+==================*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col-3 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.popular-courses .container .row .col-3 {
+    width: 50%;
+    float: left;
+}
+
+.popular-courses .post {
+    background: #f5f5f7;
+    margin-top: 20px;
+    padding-bottom: 30px;
+}
+
+.popular-courses .post .entry-title {
+    margin-bottom: 0;
+    position: relative;
+    text-align: center;
+}
+
+.popular-courses .container p {
+    text-align: center;
+}
+
+.popular-courses .post .entry-title:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background: #c1c0c3;
+    content: '';
+    margin-top: 12px;
+}
+
+.section-title {
+    font-size: 46px;
+    line-height: 52px;
+    color: #323234;
+    font-weight: normal;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/*============
+services
+=======================*/
+.services .col-3 h5 {
+    color: #01c6b8;
+}
+
+
+.services .col-3 h5:after {
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.services .col-3 .image {
+    overflow: hidden;
+    background-color: #F4F4F4;
+}
+
+/*============
+notice
+=======================*/
+
+.notice .col-two .learn-more {
+    color: #fff;
+    background: #01c6b8;
+}
+
+.notice .col-two .learn-more:before {
+    background: #018c82;
+}
+
+/*===================
+group section 
+==============*/
+
+.group {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.group .container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+
+}
+
+.group .container .entry-task {
+    width: 100%;
+}
+
+
+
+.group .container .sidebar-group {
+    width: 30%;
+    padding: 20px 15px 0 15px;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: baseline;
+}
+
+.group .container .sidebar-group .text {
+    min-width: 250px;
+    width: 45%;
+    padding: 30px 15px;
+    margin: 40px 0;
+    box-shadow: 0 3px 3px #f2f2f2;
+
+}
+
+.group .container .sidebar-group .title {
+    color: #018c82;
+}
+
+/*=============
+login button
+=========*/
+.login-btn {
+    font-size: 15px;
+    line-height: 20px;
+    background-color: #01c6b8;
+    border-radius: 5px;
+    color: #fff !important;
+    padding: 10px 20px 10px 20px;
+    float: right;
+    margin-right: 20px;
+
+    transition: all ease-in 0.5s;
+}
+
+.login-btn:hover {
+    background-color: #018c82;
+}
+
+.email,
+.tel-link {
+    padding-bottom: 10px;
+}
+
+#comments {
+    display: none;
+}
+
+.comment-topic {
+    margin-top: 50px;
+}
+
+
+.site-main .container .learn-more {
+    color: #018c82;
+}
+
+/* responsive */
+
+
+@media only screen and (max-width:1199px) {
+    .banner .banner-text .text-holder {
+        width: 65%;
+        padding: 0
+    }
+
+    .banner .banner-text .title {
+        margin-bottom: 15px
+    }
+
+    .banner .banner-text .learn-more {
+        padding: 10px 40px
+    }
+
+    .banner .banner-text {
+        top: 15%
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .header-top {
+        padding-top: 10px;
+    }
+
+    .site-header .header-bottom .container {
+        width: 100%;
+    }
+
+
+
+    .group .container {
+        padding: 0 15px;
+        flex-direction: column;
+
+    }
+
+    .group .container article {
+        width: 100%;
+    }
+
+
+    .group .container .sidebar-group {
+        width: 100%;
+        padding: 20px 15px 0 15px;
+        margin-top: 10px;
+        text-align: center;
+        justify-content: baseline;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .group .container .sidebar-group .text {
+        margin: 40px 0;
+        width: 45%;
+
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 991px) {
+    #primary {
+        padding: 0 15px;
+    }
+
+    body.custom-background div#page {
+        margin: 20px;
+    }
+
+
+    .container {
+        width: 100% !important;
+    }
+
+    .banner .banner-text .title {
+        font-size: 32px;
+        line-height: 36px
+    }
+
+    .banner .banner-text .text-holder {
+        font-size: 15px;
+        line-height: 22px
+    }
+
+    .banner .banner-text .learn-more {
+        font-size: 14px;
+        line-height: 17px
+    }
+
+    .group .container .sidebar-group {
+        display: flex;
+    }
+
+    .group .container .sidebar-group .text {
+        margin: 40px 0;
+        width: 45%;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 767px) {
+    .header-top {
+        padding-top: 10px !important;
+    }
+
+    .banner .banner-text .text-holder {
+        width: 100%
+    }
+
+    .banner .banner-text .title {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 2px;
+
+
+    }
+
+    .banner .banner-text .text-holder {
+        font-size: 11px;
+        line-height: 14px
+    }
+
+    .banner .banner-text .learn-more {
+        font-size: 8px;
+        line-height: 11px;
+        margin-top: -10px
+    }
+
+    .banner .banner-text {
+        top: 2px
+    }
+
+    .group .container .sidebar-group .text {
+        margin: 40px 20px;
+        width: 100%;
+
+    }
+}
+
+
+@media only screen and (max-width:375px) {
+    #primary {
+        padding: 0;
+    }
+
+    body.custom-background div#page {
+        margin: 5px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+
+    }
+
+    .group .container {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .group .container article {
+        margin: 0 15px;
+        padding: 0 15px;
+
+    }
+
+
+
+}

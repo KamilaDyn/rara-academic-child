@@ -1,0 +1,157 @@
+/* responsive */
+
+
+@media only screen and (max-width:1199px) {
+    .banner .banner-text .text-holder {
+        width: 65%;
+        padding: 0
+    }
+
+    .banner .banner-text .title {
+        margin-bottom: 15px
+    }
+
+    .banner .banner-text .learn-more {
+        padding: 10px 40px
+    }
+
+    .banner .banner-text {
+        top: 15%
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .header-top {
+        padding-top: 0;
+    }
+
+    .site-header .header-bottom .container {
+        width: 100%;
+    }
+
+    .group {
+        flex-direction: column;
+    }
+
+    .group .container {
+        width: 100%;
+        padding: 0 15px;
+
+    }
+
+
+    .group .sidebar-group {
+        width: 100%;
+        padding: 20px 15px 0 15px;
+        margin-top: 10px;
+        text-align: center;
+        justify-content: baseline;
+    }
+
+    .group .sidebar-group .text {
+        width: 100%;
+        margin: 40px 20px;
+
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 991px) {
+    #primary {
+        padding: 0 15px;
+    }
+
+    body.custom-background div#page {
+        margin: 20px;
+    }
+
+
+    .container {
+        width: 100% !important;
+    }
+
+    .banner .banner-text .title {
+        font-size: 32px;
+        line-height: 36px
+    }
+
+    .banner .banner-text .text-holder {
+        font-size: 15px;
+        line-height: 22px
+    }
+
+    .banner .banner-text .learn-more {
+        font-size: 14px;
+        line-height: 17px
+    }
+
+}
+
+
+@media only screen and (max-width: 767px) {
+    .header-top {
+        padding-top: 0;
+    }
+
+    .banner .banner-text .text-holder {
+        width: 100%
+    }
+
+    .banner .banner-text .title {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 2px;
+
+
+    }
+
+    .banner .banner-text .text-holder {
+        font-size: 11px;
+        line-height: 14px
+    }
+
+    .banner .banner-text .learn-more {
+        font-size: 8px;
+        line-height: 11px;
+        margin-top: -10px
+    }
+
+    .banner .banner-text {
+        top: 2px
+    }
+
+}
+
+
+@media only screen and (max-width:375px) {
+    #primary {
+        padding: 0;
+    }
+
+    body.custom-background div#page {
+        margin: 5px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+
+    }
+
+    .group .container {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .group .container article {
+        margin: 0 15px;
+        padding: 0 15px;
+
+    }
+
+}
