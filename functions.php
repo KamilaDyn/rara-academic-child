@@ -1,4 +1,6 @@
 <?php
+
+
 // add post-formats to post_type 'page'
 add_theme_support('post-formats', array(
     'aside',
@@ -13,8 +15,9 @@ add_post_type_support('intermediate', 'post-formats');
 
 add_post_type_support('advanced', 'post-formats');
 add_post_type_support('pro', 'post-formats');
-add_action('wp_enqueue_scripts', 'enqueue_parent_styles');
 
+/* add custom style */
+add_action('wp_enqueue_scripts', 'enqueue_parent_styles');
 
 
 function enqueue_parent_styles()
@@ -32,6 +35,7 @@ function child_remove_parent_functions()
 add_action('init', 'child_remove_parent_functions');
 
 require_once dirname(__FILE__) . '/inc/customizer.php';
+
 /**
  * Enqueue scripts and styles.
  */
@@ -100,26 +104,30 @@ function wpshout_dequeue_and_then_enqueue()
 
 
 /*
-redirect subscriber accounts out of admin to home page
+redirect subscriber and groups accounts out of admin to home page
 */
 function redirectSubsToFrontend()
 {
     $ourCurrentUser = wp_get_current_user();
 
-    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'beginner') {
+    if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'beginner') {
         wp_redirect(esc_url(site_url('/student/beginner')));
         exit;
     }
-    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'intermediate') {
+    if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'intermediate') {
         wp_redirect(esc_url(site_url('/student/intermediate/')));
         exit;
     }
-    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'advanced') {
+    if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'advanced') {
         wp_redirect(site_url('/student/advanced'));
         exit;
     }
-    if (count($ourCurrentUser->roles) == 2 and $ourCurrentUser->roles[1] == 'pro') {
+    if (count($ourCurrentUser->roles) <= 2 and $ourCurrentUser->roles[1] == 'pro') {
         wp_redirect(esc_url(site_url('/student/pro')));
+        exit;
+    }
+    if (count($ourCurrentUser->roles) == 1 and $ourCurrentUser->roles[0] == 'subscriber') {
+        wp_redirect(esc_url(site_url('/')));
         exit;
     }
 }
@@ -127,11 +135,12 @@ add_action('admin_init', 'redirectSubsToFrontend');
 
 function set_posts_per_page_for_beginner($query)
 {
-    if (!is_admin() && $query->is_main_query() && is_post_type_archive('beginner')) {
+    if (!is_admin() and $query->is_main_query() and is_post_type_archive('beginner')) {
         $query->set('posts_per_page', '3');
     }
 }
 add_action('pre_get_posts', 'set_posts_per_page_for_beginner');
+
 
 /**  chnged function for top header - added login fn */
 
@@ -168,3 +177,46 @@ if (!function_exists('rara_academic_header_top')) :
     }
 endif;
 add_action('rara_academic_header', 'rara_academic_header_top', 20);
+
+
+
+/* customize login page */
+function ourheaderurl()
+{
+    return esc_url(site_url('/'));
+}
+add_filter('login_headerurl', 'ourheaderurl');
+
+/*change login style */
+function my_login_CSS()
+{
+    wp_enqueue_style('rara-academic-google-fonts', rara_academic_fonts_url());
+    wp_enqueue_style('custom-login',  get_stylesheet_directory_uri() . '/style.css');
+}
+add_action('login_enqueue_scripts', 'my_login_CSS');
+
+
+/*change login headline title */
+
+function ourLoginTitle()
+{
+    return get_bloginfo('name');
+}
+add_filter('login_headertitle', 'ourLoginTitle');
+
+/* hide admin bar */
+
+function noSubsAdminBar()
+{
+    $currentUser = wp_get_current_user();
+    if (count($currentUser->roles) <= 2 and  ($currentUser->roles[0] == 'subscriber' or $currentUser->roles[1] == 'beginner' or $currentUser->roles[1] == 'intermediate' or $currentUser->roles[1] == 'advanced' or  $currentUser->roles[1] == 'pro')) {
+        show_admin_bar(false);
+    }
+}
+add_action('admin_init', 'noSubsAdminBar');
+
+add_filter('wpcf7_validate_configuration', '__return_false');
+
+
+
+?>
