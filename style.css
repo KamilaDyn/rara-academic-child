@@ -21,6 +21,24 @@ Text Domain: rara-academic-child
     padding-top: 10px;
 }
 
+.active {
+    display: block !important;
+}
+
+/* ============
+menu 
+====== */
+.menu-item-has-children {
+    border-bottom: 1px solid rgba(0, 0, 0, .1) !important;
+}
+
+
+.menu-item-has-children .sub-menu li {
+    border: 1px solid rgba(0, 0, 0, .1);
+    background-color: 1px solid rgba(0, 0, 0, .1);
+    padding-left: 5%;
+}
+
 /*========
 banner
 ==================*/
@@ -205,6 +223,8 @@ popular courses
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0;
+    padding: 0 10px;
 }
 
 .col-3 {
@@ -405,6 +425,99 @@ students panel
     color: red;
 }
 
+/* ===============
+login page
+=============*/
+
+body.login {
+    font-family: "Lato", sans-serif;
+    color: #34495e;
+    background: linear-gradient(to top, rgba(85, 84, 88, 0.3), rgba(85, 84, 88, 0.3)), url(images/imgback.png) no-repeat fixed center;
+    display: flex;
+}
+
+
+body.login div#login {
+    background-color: #fff;
+    padding: 5%;
+}
+
+body.login div#login form#loginform {
+    border: 1px solid #e3e5e6;
+}
+
+body.login div#login h1 a {
+    color: #01c6b8;
+    font-size: 30px;
+    font-weight: 300;
+    background-image: none;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+}
+
+body.login div#login h1 a:hover {
+    color: #018c82;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+    background-color: #01c6b8;
+    color: #fff;
+    border: none;
+    transition: all 1s ease;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit:hover {
+    background-color: #018c82;
+    color: #fff;
+    border: none;
+}
+
+body.login div#login p#nav a {
+    color: #018c82;
+}
+
+
+/* ===========
+contact form 
+==== */
+
+.wpcf7-form {
+    margin-top: 20px;
+    width: 50%;
+    box-shadow: 0.5px 0.5px 3px 3px #1f1f1f;
+    padding: 5%;
+
+}
+
+.wpcf7-form-control.wpcf7-submit {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #01968b;
+    padding: 18px 60px;
+    text-transform: uppercase;
+    position: relative;
+    box-shadow: none;
+}
+
+.wpcf7-form-control.wpcf7-submit:hover:before {
+    background-color: #018c82;
+    box-shadow: none;
+}
+
+input[type="submit"] {
+    text-shadow: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+    width: 100%;
+}
+
 /* responsive */
 
 
@@ -466,6 +579,10 @@ students panel
 
     }
 
+    .wpcf7-form {
+        width: 65%;
+    }
+
 }
 
 
@@ -510,6 +627,12 @@ students panel
 
     }
 
+    .wpcf7-form {
+        margin-top: 20px;
+        width: 75%;
+
+    }
+
 }
 
 
@@ -526,8 +649,6 @@ students panel
         font-size: 18px;
         line-height: 22px;
         margin-bottom: 2px;
-
-
     }
 
     .banner .banner-text .text-holder {
@@ -548,6 +669,11 @@ students panel
     .group .container .sidebar-group .text {
         margin: 40px 20px;
         width: 100%;
+
+    }
+
+    .wpcf7-form {
+        width: 90%;
 
     }
 }
