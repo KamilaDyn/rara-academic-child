@@ -128,10 +128,9 @@ jQuery(document).ready(function ($) {
 
         $('.main-navigation').prepend('<div class="btn-close-menu">Close Menu</div>');
 
-        $('.main-navigation ul .menu-item-has-children').append('<div class="angle-down"></div>');
+        // $('.main-navigation ul .menu-item-has-children').append('<div class="angle-down"></div>');
 
         $('.main-navigation ul li .angle-down').click(function(){
-            $(this).prev().slideToggle();
             $(this).toggleClass('active');
         });
     }
