@@ -12,26 +12,27 @@
 
 $ed_full_content = get_theme_mod('rara_academic_ed_full_content');
 ?>
-<div class=" container">
+<div class="group-container">
+    <div class="content">
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <header class="entry-header">
+                <h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
+                <h3 class="entry-subtitle"></h3>
+            </header><!-- .entry-header -->
 
-        <header class="entry-header">
-            <h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
-            <h3 class="entry-subtitle"></h3>
-        </header><!-- .entry-header -->
-
-        <?php
-        if (has_post_thumbnail()) {
-        ?>
-            <div><?php the_post_thumbnail('rara-academic-with-sidebar') ?></div>
-        <?php
-        }
-        ?>
-        <div class="entry-content">
-            <?php the_content(); ?>
-        </div>
-    </article>
+            <?php
+            if (has_post_thumbnail()) {
+            ?>
+                <div><?php the_post_thumbnail('rara-academic-with-sidebar') ?></div>
+            <?php
+            }
+            ?>
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div>
+        </article>
+    </div>
     <div class="sidebar-group">
         <?php if (get_field('vocabulary')) : ?>
             <div class="text vocabulary">
