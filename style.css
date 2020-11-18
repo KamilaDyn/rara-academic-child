@@ -12,6 +12,9 @@ Text Domain: rara-academic-child
 
 */
 
+.site-main {
+    padding: 0 10px;
+}
 
 .full-width #primary {
     width: 90%;
@@ -320,37 +323,44 @@ group section
     margin-top: 50px;
 }
 
-.group .container {
+.group .group-container {
     width: 100%;
     margin: 0;
     display: flex;
+    justify-content: space-between;
+}
+
+.group .group-container .content {
+    width: 65%;
+}
+
+.group .group-container article {
+    width: 100%;
 
 }
 
-.group .container .entry-task {
+.group .group-container .entry-task {
     width: 100%;
 }
 
 
 
-.group .container .sidebar-group {
+.group .group-container .sidebar-group {
     width: 30%;
     padding: 20px 15px 0 15px;
     margin-top: 50px;
     text-align: center;
-    justify-content: baseline;
 }
 
-.group .container .sidebar-group .text {
+.group .group-container .sidebar-group .text {
     min-width: 250px;
-    width: 45%;
     padding: 30px 15px;
     margin: 40px 0;
     box-shadow: 0 3px 3px #f2f2f2;
 
 }
 
-.group .container .sidebar-group .title {
+.group .group-container .sidebar-group .title {
     color: #018c82;
 }
 
@@ -552,18 +562,18 @@ input[type="search"] {
 
 
 
-    .group .container {
+    .group .group-container {
         padding: 0 15px;
         flex-direction: column;
 
     }
 
-    .group .container article {
+    .group .group-container .content {
         width: 100%;
     }
 
 
-    .group .container .sidebar-group {
+    .group .group-container .sidebar-group {
         width: 100%;
         padding: 20px 15px 0 15px;
         margin-top: 10px;
@@ -573,7 +583,7 @@ input[type="search"] {
         flex-wrap: wrap;
     }
 
-    .group .container .sidebar-group .text {
+    .group .group-container .sidebar-group .text {
         margin: 40px 0;
         width: 45%;
 
@@ -590,7 +600,7 @@ input[type="search"] {
 
 @media only screen and (max-width: 991px) {
     #primary {
-        padding: 0 15px;
+        padding: 0 5px;
     }
 
     body.custom-background div#page {
@@ -617,14 +627,20 @@ input[type="search"] {
         line-height: 17px
     }
 
-    .group .container .sidebar-group {
+    .group .group-container .sidebar-group {
         display: flex;
     }
 
-    .group .container .sidebar-group .text {
+    .group .group-container .sidebar-group .text {
         margin: 40px 0;
         width: 45%;
 
+    }
+
+    .comments-area,
+    .comments-area.form {
+
+        padding: 40px 10px;
     }
 
     .wpcf7-form {
@@ -637,6 +653,18 @@ input[type="search"] {
 
 
 @media only screen and (max-width: 767px) {
+    .full-width #primary {
+        width: 100%;
+    }
+
+    .row {
+        padding: 0;
+    }
+
+    body.custom-background div#page {
+        margin: 5px;
+    }
+
     .header-top {
         padding-top: 10px !important;
     }
@@ -666,15 +694,15 @@ input[type="search"] {
         top: 2px
     }
 
-    .group .container .sidebar-group .text {
+    .group .group-container .sidebar-group .text {
         margin: 40px 20px;
         width: 100%;
 
     }
 
     .wpcf7-form {
-        width: 90%;
-
+        padding: 2%;
+        width: 100%;
     }
 }
 
@@ -694,16 +722,21 @@ input[type="search"] {
 
     }
 
-    .group .container {
+    .group .groupcontainer {
         margin: 0;
         padding: 0;
 
     }
 
-    .group .container article {
+    .group .group-container article {
         margin: 0 15px;
         padding: 0 15px;
 
+    }
+
+    .wpcf7-form {
+        width: 100%;
+        padding: 10px;
     }
 
 
