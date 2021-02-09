@@ -42,6 +42,9 @@ function rara_academic_customize_register_child($wp_customize)
         $option_categories[$category->term_id] = $category->name;
     }
 
+    require_once dirname(__FILE__) . '/sanitize.php';
+
+
     /** Default Settings*/
     $wp_customize->add_panel(
         'wp_default_panel',
@@ -111,6 +114,11 @@ function rara_academic_customize_register_child($wp_customize)
             'type' => 'text',
         )
     );
+
+
+
+
+
 
     /** Home Page Settings */
     $wp_customize->add_panel(
@@ -1332,6 +1340,8 @@ function rara_academic_customize_register_child($wp_customize)
     );
     /** Social Settings Ends */
 
+
+
     /** Blog page Settings */
     $wp_customize->add_section(
         'rara_academic_blog_page_settings',
@@ -1360,12 +1370,107 @@ function rara_academic_customize_register_child($wp_customize)
         )
     );
 
+
+    /** Student Page Banner */
+    $wp_customize->add_section(
+        'rara_academic_banner_image_section',
+        array(
+            'title' => __('Student Page Banner', 'rara-academic'),
+            'priority' => 70,
+        )
+    );
+
+    /** Banner Archive Image Beginner Grou[] */
+    $wp_customize->add_setting(
+        'rara_academic_banner_beginner_image',
+        array(
+            'default'           => get_stylesheet_directory_uri() . '/images/default-header.jpg',
+            'sanitize_callback' => 'fte_sanitize_image',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'rara_academic_banner_beginner_image',
+            array(
+                'label'         => esc_html__('Banner Image for beginner group', 'rara-academic'),
+                'section'       => 'rara_academic_banner_image_section',
+                'type'          => 'image',
+            )
+        )
+    );
+
+    /** Banner Archive Image Intermediate Group */
+    $wp_customize->add_setting(
+        'rara_academic_banner_intermediate_image',
+        array(
+            'default'           => get_stylesheet_directory_uri() . '/images/default-header.jpg',
+            'sanitize_callback' => 'fte_sanitize_image',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'rara_academic_banner_intermediate_image',
+            array(
+                'label'         => esc_html__('Banner Image for Intermediate group', 'rara-academic'),
+                'section'       => 'rara_academic_banner_image_section',
+                'type'          => 'image',
+            )
+        )
+    );
+
+    /** Banner Archive Image Advanced Group */
+    $wp_customize->add_setting(
+        'rara_academic_banner_advanced_image',
+        array(
+            'default'           => get_stylesheet_directory_uri() . '/images/default-header.jpg',
+            'sanitize_callback' => 'fte_sanitize_image',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'rara_academic_banner_advanced_image',
+            array(
+                'label'         => esc_html__('Banner Image for Advanced  group', 'rara-academic'),
+                'section'       => 'rara_academic_banner_image_section',
+                'type'          => 'image',
+            )
+        )
+    );
+
+    /** Banner Archive Image Pro Group */
+    $wp_customize->add_setting(
+        'rara_academic_banner_pro_image',
+        array(
+            'default'           => get_stylesheet_directory_uri() . '/images/default-header.jpg',
+            'sanitize_callback' => 'fte_sanitize_image',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'rara_academic_banner_pro_image',
+            array(
+                'label'         => esc_html__('Banner Image for  Pro  group', 'rara-academic'),
+                'section'       => 'rara_academic_banner_image_section',
+                'type'          => 'image',
+            )
+        )
+    );
+
+
     /** Footer Section */
     $wp_customize->add_section(
         'rara_academic_footer_section',
         array(
-            'title' => __('Footer Settings', 'rara-academic'),
-            'priority' => 70,
+            'title' => __('Footer Settings ', 'rara-academic'),
+            'priority' => 80,
         )
     );
 
