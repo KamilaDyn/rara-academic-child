@@ -9,16 +9,10 @@
  */
 
 get_header(); ?>
-
+<?php fte_banner_header(); ?>
 <div id="primary" class="content-area">
     <main id="main" class="intermediate" role="main">
         <?php if (current_user_can('read_group_intermediate')) : ?>
-            <div class="banner-group">
-                <h1>Grupa: Intermediate</h1>
-                <?php if (is_user_logged_in()) :
-                    echo '<h2 class="member-name"> Hello ' . $current_user->user_login . '!!!</h2>';
-                endif; ?>
-            </div>
             <div class="group">
                 <?php
                 while (have_posts()) : the_post();
@@ -44,7 +38,8 @@ get_header(); ?>
             rara_academic_pagination();
         else : ?>
             <div class="not-logged">
-                <h2>Jesteś Wylogowany / wylogowana:</h2><a href="<?php echo  wp_login_url() ?>" class="login-btn">Log In</a>
+                <h2>Dostęp dla zalogowanych uczestników grupy.</h2>
+                <p>Jesteś Wylogowany(a): <a href="<?php echo  wp_login_url() ?>" class="login">Zaloguj się</a></p>
             </div>
 
 
