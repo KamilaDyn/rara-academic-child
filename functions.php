@@ -1,6 +1,8 @@
 <?php
 
 
+
+
 // add post-formats to post_type 'page'
 add_theme_support('post-formats', array(
     'aside',
@@ -35,6 +37,7 @@ function child_remove_parent_functions()
 add_action('init', 'child_remove_parent_functions');
 
 require_once dirname(__FILE__) . '/inc/customizer.php';
+require_once dirname(__FILE__)  . '/inc/custom.php';
 
 /**
  * Enqueue scripts and styles.
@@ -214,6 +217,12 @@ function noSubsAdminBar()
     }
 }
 add_action('admin_init', 'noSubsAdminBar');
+
+function remove_wp_version()
+{
+    return '';
+}
+add_filter('the_generator', 'remove_wp_version');
 
 add_filter('wpcf7_validate_configuration', '__return_false');
 
