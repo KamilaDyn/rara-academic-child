@@ -43,6 +43,7 @@ menu
 }
 
 
+
 .menu-item-has-children .sub-menu li {
     border: 1px solid rgba(0, 0, 0, .1);
     background-color: 1px solid rgba(0, 0, 0, .1);
@@ -63,15 +64,19 @@ banner
 }
 
 .banner img {
-    width: 100%;
     vertical-align: top;
     opacity: 0.5;
 }
 
+.banner-container {
+    position: relative;
+}
+
 .banner .banner-text {
     position: absolute;
-    top: 24.5%;
+    top: 50%;
     left: 0;
+    transform: translateY(-50%);
     width: 100%;
     color: #fff;
     font-size: 22px;
@@ -84,9 +89,10 @@ banner
 .banner .banner-text .text-holder {
 
     max-width: 454px;
-    float: right;
     text-align: left;
     color: #fff;
+    margin-left: 15%;
+    float: none;
 
 }
 
@@ -222,11 +228,16 @@ banner
 
 
 /*========
-welcoem
+welcome
 ==================*/
 .welcome-section .watch-link {
     margin-top: 20px;
 
+}
+
+.welcome-section .col-2:first-child {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -564,7 +575,6 @@ input[type="search"] {
 
 @media only screen and (max-width:1199px) {
     .banner .banner-text .text-holder {
-        width: 65%;
         padding: 0
     }
 
@@ -576,9 +586,6 @@ input[type="search"] {
         padding: 10px 40px
     }
 
-    .banner .banner-text {
-        top: 15%
-    }
 }
 
 
@@ -655,7 +662,12 @@ input[type="search"] {
 
     .banner .banner-text .learn-more {
         font-size: 14px;
-        line-height: 17px
+        line-height: 17px;
+        padding: 10px 15px;
+    }
+
+    .welcome-section .col-2 {
+        width: 100%;
     }
 
     .group .group-container .sidebar-group {
@@ -705,25 +717,23 @@ input[type="search"] {
     }
 
     .banner .banner-text .title {
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 24px;
+        line-height: 30px;
         margin-bottom: 2px;
     }
 
     .banner .banner-text .text-holder {
-        font-size: 11px;
-        line-height: 14px
+        font-size: 16px;
+        line-height: 18px
     }
 
     .banner .banner-text .learn-more {
-        font-size: 8px;
-        line-height: 11px;
+        font-size: 14px;
+        line-height: 16px;
         margin-top: -10px
     }
 
-    .banner .banner-text {
-        top: 2px
-    }
+
 
     .group .group-container .sidebar-group .text {
         margin: 40px 20px;
@@ -769,6 +779,24 @@ input[type="search"] {
         width: 100%;
         padding: 10px;
     }
+
+
+    .banner .banner-text .title {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 2px;
+    }
+
+    .banner .banner-text .text-holder {
+        font-size: 14px;
+        line-height: 16px
+    }
+
+    .banner .banner-text .learn-more {
+        font-size: 12px;
+        margin-top: -10px
+    }
+
 
 
 
