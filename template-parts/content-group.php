@@ -27,8 +27,7 @@
             <hr>
         <?php }
     else :
-        ?>
-        <h3 class="info">Brak dostepnych materiałów.</h3>
+        get_template_part('template-parts/content', 'empty'); ?>
     <?php endif;
     echo paginate_links();
     ?>
