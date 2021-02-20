@@ -524,17 +524,18 @@ function rara_academic_customize_register_child($wp_customize)
         'rara_academic_welcome_post',
         array(
             'default' => '',
-            'sanitize_callback' => 'rara_academic_sanitize_select',
+            'sanitize_callback' => 'absint'
         )
     );
 
     $wp_customize->add_control(
         'rara_academic_welcome_post',
         array(
-            'label' => __('Select Welcome Post', 'rara-academic'),
+            'label' => __('Select Welcome Page', 'rara-academic'),
             'section' => 'rara_academic_welcome_settings',
-            'type' => 'select',
-            'choices' => $options_posts,
+            'type'  => 'dropdown-pages',
+            'settings' => 'rara_academic_welcome_post',
+
         )
     );
 
